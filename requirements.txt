@@ -1,0 +1,8 @@
+fastapi
+httpx
+pydantic  
+psycopg2-binary
+python-dotenv
+pytest-dotenv
+pyparsing
+pytest

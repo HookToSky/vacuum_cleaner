@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./src/docker/init:/docker-entrypoint-initdb.d/
+      - ./src/docker/data:/var/lib/postgresql/data
+
+  backend:
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+  
+volumes:
+  pgdata:
