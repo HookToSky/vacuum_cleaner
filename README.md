@@ -12,6 +12,8 @@ service listens to HTTP protocol on port 5000.
 Both can be used interchangebly.
 
 ## Usage
+Database is initialized when the project is run for the first time. 
+
 example .env variable
 ```
 POSTGRES_USER=
