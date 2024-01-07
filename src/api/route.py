@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from api.model import Result, Path
-from api.service import move_accross_the_path
+from src.api.model import Result, Path
+from src.api.service import generate_cleaning_report
 
 developer_test = APIRouter(prefix="/tibber-developer-test")
 
@@ -14,7 +14,7 @@ def clean_given_path(path: Path) -> Result:
           Inserted record into the database as a reference, and simplicity (no need to query the db).
     """
     try:
-       response: Result = move_accross_the_path(path)
+       response: Result = generate_cleaning_report(path)
        return response
     except Exception as e:
         raise HTTPException(

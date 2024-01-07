@@ -1,9 +1,9 @@
-from common.db_conn import conn
+from src.common.db_conn import conn
 from datetime import datetime
 from pydantic import BaseModel
 
 
-class Start(BaseModel):
+class Coordinates(BaseModel):
     x: int
     y: int
 
@@ -13,8 +13,15 @@ class Command(BaseModel):
     steps: int
 
 
+class FurthestByDirection(BaseModel):
+    furthest_east: int
+    furthest_west: int
+    furthest_south: int
+    furthest_north: int
+
+
 class Path(BaseModel):
-    start: Start
+    start: Coordinates
     commands: list[Command]
 
 
