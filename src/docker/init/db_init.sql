@@ -1,4 +1,4 @@
-GRANT ALL PRIVILEGES ON DATABASE tibber_app TO tibber;
+GRANT ALL PRIVILEGES ON DATABASE app TO postgres;
 
 CREATE TABLE IF NOT EXISTS cleaning_report (
     id serial NOT NULL,

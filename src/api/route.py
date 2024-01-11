@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 from src.api.model import Result, Path
 from src.api.service import generate_cleaning_report
 
-developer_test = APIRouter(prefix="/tibber-developer-test")
+developer_test = APIRouter(prefix="/vacuum")
 
 
 @developer_test.post("/enter-path/")

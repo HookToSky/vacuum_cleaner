@@ -49,7 +49,7 @@ Example:
          "steps":1
       }
    ]
-}' <endpoint-url>
+}' <http://localhost:5000/vacuum/enter-path/>
 
 After issuing the command, this service calculates the total number of unique places that are cleaned, and gives the result back. It also saves the result into the "cleaning_report" table in Postgres.
 
